@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+</head>
+<body>
+<table style="width:100%; font-size:72px;">
+<tr style="font-size:18px;"><td style="font-size:18px;">
+<button onclick="randmathprob()">Addition!</button></td>
+<td id="demo" style="font-size:72px;"></td>
+<td id="demo2" style="font-size:72px;"></td>
+</tr>
+<tr><td>
+<button onclick="randmathprobmin()">Subtraction!</button></td>
+<td id="demo3"></td>
+<td id="demo4"></td>
+</tr>
+<tr><td>
+<button onclick="randmathprobmult()">Multiply!</button></td>
+<td id="demo5"></td>
+<td id="demo6"></td>
+</tr>
+</table>
+<script>
+var x;
+var y;
+var a;
+var s;
+var m;
+var n;
+var o;
+let addclicker;
+addclicker = 0;
+let minclicker;
+minclicker = 0;
+let multclicker;
+multclicker = 0;
+function randmathprob() {
+addclicker = addclicker + 1;
+if (addclicker % 2 != 0) {
+	var x = Math.floor((Math.random() * 4999) + 1);
+	var y = Math.floor((Math.random() * 4999) + 1);
+	var x;
+	var y;
+	a = x + y;
+	document.getElementById("demo").innerHTML = x + " + " + y + " = ";
+	document.getElementById("demo2").innerHTML = "";
+	} else {
+	document.getElementById("demo2").innerHTML = a;
+	}
+}
+
+function randmathprobmin() {
+minclicker = minclicker + 1;
+	if (minclicker % 2 != 0) {
+		var x = Math.floor((Math.random() * 50) + 1);
+		var y = Math.floor((Math.random() * x) + 1);
+		s = x - y;
+		document.getElementById("demo3").innerHTML = x + " - " + y + " = ";
+		document.getElementById("demo4").innerHTML = "";
+	} else {
+		document.getElementById("demo4").innerHTML = s;
+	}
+}
+
+function randmathprobmult() {
+multclicker = multclicker + 1;
+	if (multclicker % 2 != 0) {
+		var m = Math.floor((Math.random() * 10) + 1);
+		var n = Math.floor((Math.random() * 10) + 1);
+		o = m * n;
+		document.getElementById("demo5").innerHTML = m + " x " + n + " = ";
+		document.getElementById("demo6").innerHTML = "";
+	} else {
+		document.getElementById("demo6").innerHTML = o;
+	}
+}
+</script>
+</body>
+</html>
