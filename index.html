@@ -73,10 +73,13 @@ if (addclicker % 2 != 0) {
 	document.getElementById("demo2").innerHTML = a;
 	}
 }
-
+function changehigh() {
+	var c = document.getElementById("highnumber").value;
+	document.getElementById("demo7").innerHTML = c;
+}
 function randmathprobmin() {
 	var c = document.getElementById("highnumber").value;
-	document.getElementById("demo7").innerHTML = c
+	document.getElementById("demo7").innerHTML = c;
 minclicker = minclicker + 1;
 	if (minclicker % 2 != 0) {
 		var x = Math.floor((Math.random() * c) + 1);
