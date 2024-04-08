@@ -6,6 +6,19 @@
 <body>
 <table style="width:100%; font-size:72px;">
 <tr style="font-size:18px;"><td style="font-size:18px;">
+<label for="highnumber">Choose the highest number to add and subtract by:</label>
+	<select name="highnumber" id="highnumber">
+		<option value="10">10</option>
+		<option value="49">49</option>
+		<option value="99">99</option>
+		<option value="499">499</option>
+		<option value="999">999</option>
+		<option value="4999">4999</option>
+	</select>
+	<button onClick="changehigh()">Change High Number</button>
+</td>
+<td>Highest number we are using is:</td><td><p id="demo7"></tr>
+<tr style="font-size:18px;"><td style="font-size:18px;">
 <button onclick="randmathprob()">Addition!</button></td>
 <td id="demo" style="font-size:72px;"></td>
 <td id="demo2" style="font-size:72px;"></td>
@@ -29,17 +42,28 @@ var s;
 var m;
 var n;
 var o;
+var c;
+changehigh();
+	var c = document.getElementById("highnumber").value;
+	document.getElementById("demo7").innerHTML = c;
 let addclicker;
 addclicker = 0;
 let minclicker;
 minclicker = 0;
 let multclicker;
 multclicker = 0;
+
+function changehigh() {
+	var c = document.getElementById("highnumber").value;
+	document.getElementById("demo7").innerHTML = c;
+}
 function randmathprob() {
+	var c = document.getElementById("highnumber").value;
+	document.getElementById("demo7").innerHTML = c;
 addclicker = addclicker + 1;
 if (addclicker % 2 != 0) {
-	var x = Math.floor((Math.random() * 4999) + 1);
-	var y = Math.floor((Math.random() * 4999) + 1);
+	var x = Math.floor((Math.random() * c) + 1);
+	var y = Math.floor((Math.random() * c) + 1);
 	var x;
 	var y;
 	a = x + y;
@@ -51,9 +75,11 @@ if (addclicker % 2 != 0) {
 }
 
 function randmathprobmin() {
+	var c = document.getElementById("highnumber").value;
+	document.getElementById("demo7").innerHTML = c
 minclicker = minclicker + 1;
 	if (minclicker % 2 != 0) {
-		var x = Math.floor((Math.random() * 50) + 1);
+		var x = Math.floor((Math.random() * c) + 1);
 		var y = Math.floor((Math.random() * x) + 1);
 		s = x - y;
 		document.getElementById("demo3").innerHTML = x + " - " + y + " = ";
